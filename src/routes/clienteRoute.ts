@@ -1,3 +1,54 @@
+// {
+//   "name": "proyecto_gestion",
+//   "version": "1.0.0",
+//   "main": "index.js",
+//   "scripts": {
+//     "dev": "tsnd --respawn --clear src/server.ts",
+//     "test": "echo \"Error: no test specified\" && exit 1",
+//     "start": "npm run build && node dist/server.js",
+//     "build": "tsc"
+//   },
+//   "keywords": [],
+//   "author": "",
+//   "license": "ISC",
+//   "description": "",
+//   "devDependencies": {
+//     "@types/cors": "^2.8.19",
+//     "@types/dotenv": "^6.1.1",
+//     "@types/express": "^5.0.3",
+//     "@types/node": "^22.15.21",
+//     "@types/swagger-jsdoc": "^6.0.4",
+//     "@types/swagger-ui-express": "^4.1.8",
+//     "prisma": "^6.11.0",
+//     "ts-node-dev": "^2.0.0",
+//     "typescript": "^5.8.3"
+//   },
+//   "dependencies": {
+//     "@prisma/client": "^6.11.0",
+//     "cors": "^2.8.5",
+//     "dotenv": "^16.5.0",
+//     "express": "^5.1.0",
+//     "joi": "^17.13.3",
+//     "swagger-jsdoc": "^6.2.8",
+//     "swagger-ui-express": "^5.0.1"
+//   }
+// }
+
+
+
+// import express, { Request, Response } from 'express';
+// import { agregarClientes, buscarClientePorId, eliminarCliente, listarClientes, modificarCliente} from '../controllers/clienteController';
+// const route = express.Router();
+
+// route.get('/',listarClientes);
+// route.get('/:id',buscarClientePorId);
+// route.post('/',agregarClientes);
+// route.put('/:id',modificarCliente);
+// route.delete('/:id',eliminarCliente);
+
+// export default route;
+
+
 import express, { Request, Response } from 'express';
 import { agregarClientes, buscarClientePorId, eliminarCliente, listarClientes, modificarCliente } from '../controllers/clienteController';
 import { authMiddleware } from '../auth/auth.middleware';
@@ -19,7 +70,7 @@ const route = express.Router();
  *     Cliente:
  *       type: object
  *       properties:
- *         id_cliente:
+ *         idCliente:
  *           type: integer
  *           example: 1
  *         nombre:
@@ -31,18 +82,6 @@ const route = express.Router();
  *         telefono:
  *           type: string
  *           example: '987654321'
- *         estado_auditoria:
- *           type: string
- *           example: '1'
- *         fecha_creacion:
- *           type: string
- *           format: date-time
- *           example: '2024-07-02T15:30:00Z'
- *         fecha_actualizacion:
- *           type: string
- *           format: date-time
- *           nullable: true
- *           example: '2024-07-05T12:00:00Z'
  */
 
 /**
